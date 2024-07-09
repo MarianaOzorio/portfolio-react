@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoCloseOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { NavLink, useLocation } from "react-router-dom";
 import styles from "./NavBar.module.css";
@@ -18,11 +19,18 @@ function NavBar() {
   return (
     <nav className={styles.navBarWrapper}>
       <div className={styles.brandAndIcon}>
-      <NavLink to="/">{renderBrand()}</NavLink>
-        <RxHamburgerMenu
-          className={styles.hamburgerIcon}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        />
+        <NavLink to="/">{renderBrand()}</NavLink>
+        {!isMenuOpen ? (
+          <RxHamburgerMenu
+            className={styles.menuIcon}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          />
+        ) : (
+          <IoCloseOutline
+            className={styles.menuIcon}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          />
+        )}
       </div>
       <ul className={isMenuOpen ? styles.open : ""}>
         <li>

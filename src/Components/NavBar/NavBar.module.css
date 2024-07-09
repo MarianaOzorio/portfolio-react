@@ -12,7 +12,7 @@
     margin-bottom: 1em;
 }
 
-.hamburgerIcon {
+.menuIcon {
     width: 3em;
     height: 3em;
     display: none;
@@ -24,8 +24,11 @@
 }
 
 .navBarWrapper li {
+    width: fit-content;
     list-style-type: none;
     margin-bottom: 1em;
+    border-bottom: 0.4em solid transparent;
+    transition: border-bottom 1.5s;
 }
 
 .navBarWrapper a {
@@ -33,8 +36,12 @@
     color: #fff;
 }
 
+.navBarWrapper li:hover {
+    border-bottom: 0.4em solid rgb(0, 255, 21);
+}
+
 @media only screen and (max-width: 768px) {
-    .hamburgerIcon {
+    .menuIcon {
         display: block;
         cursor: pointer;
     }
